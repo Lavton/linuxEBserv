@@ -1,4 +1,4 @@
-from app import app, Status
+from app import app, status
 from random import randint
 
 @app.route('/submit', methods=['POST'])
@@ -8,7 +8,7 @@ def send_solution():
 	id = randint(1, 200000000)
 	return jsonify(id=id)
 
-@app.route('check', methods['POST'])
+@app.route('/check', methods=['POST'])
 def check():
 	id = request.form.get('id', None)
 	status = Status.ready
